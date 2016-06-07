@@ -39,7 +39,7 @@ public class modelo {
 			Statement stmt = conexion.createStatement();
 			resultado = stmt.executeUpdate(dato);
 		} catch (SQLException e) {
-			System.out.println("Error Insertabla");
+			System.out.println("");
 		}
 	}
 	public int tratarcodigo(String query) {
@@ -56,7 +56,7 @@ public class modelo {
 		}
 		return usuariocodigo;
 	}
-	public void btnanadir(String alumno, String nota, String modulo){
+	public void btnanadir(String alumno, String nota, String modulo, String profesor){
 		int cod_al = tratarcodigo("select * from ENTORNOS.ALUMNO")+1;
 		int cod_mod = tratarcodigo("select * from ENTORNOS.modulo")+1;
 		Insertabla("Insert into ENTORNOS.alumno (COD_ALUMNO,nombre) values ("+cod_al+" , '"+alumno+"'");
